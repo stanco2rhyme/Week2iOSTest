@@ -11,10 +11,8 @@ import UIKit
 class PokemonViewController: UIViewController {
     
     var pokemonBaseURLSpecific: String = "https://api.tvmaze.com/shows/82?embed=seasons&embed=episodes"
-    
     var episodesArray: [episodes] = [episodes]()
-
-    //    var pokemonBaseURLComplete: String?
+    
     @IBOutlet weak var myTableview: UITableView!
     
     
@@ -44,16 +42,8 @@ class PokemonViewController: UIViewController {
             DispatchQueue.global().sync {
                 do {
                     guard let myData = data else {return}
-//                    let pok = try JSONSerialization.jsonObject(with: data!, options: [])
-//                    print(pok)
                     let poke = try JSONDecoder().decode(Pokemon.self, from: myData)
-//                    print(poke)
-
-//                    self.pokemonArray = [poke]
                     self.episodesArray = poke.embedded.episodes
-                    print(self.episodesArray)
-
-//                    self.pokemonArray.append(poke)
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -80,7 +70,7 @@ extension PokemonViewController: UITableViewDataSource {
         cell.episodeTitle.text = episodesArray[indexPath.row].episodeTitle
         cell.episodeNumber.text = String(episodesArray[indexPath.row].episodeNumber)
         cell.season.text = String(episodesArray[indexPath.row].season)
-
+        
         return cell
     }
 }

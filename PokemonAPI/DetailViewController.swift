@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var seasonLabel: UILabel!
     @IBOutlet weak var episodeNumberLabel: UILabel!
     
-    @IBOutlet weak var summaryTextview: UITextView!
+    @IBOutlet weak var summaryLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,6 @@ class DetailViewController: UIViewController {
         seasonLabel.text = season
         episodeNumberLabel.text = episodeNumber
         guard let summaryText = summary else {return}
-        print("This is the summary of detailView variable: \(summaryText)")
-        summaryTextview.text = summaryText
+        summaryLabel.text = summaryText
     }
 }
