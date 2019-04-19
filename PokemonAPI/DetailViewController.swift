@@ -18,13 +18,13 @@ class DetailViewController: UIViewController {
     var summary: String?
 
     @IBOutlet weak var episodeTitleLabel: UILabel!
-    
     @IBOutlet weak var premierDatetLabel: UILabel!
     @IBOutlet weak var airtimeLabel: UILabel!
     @IBOutlet weak var seasonLabel: UILabel!
-    
     @IBOutlet weak var episodeNumberLabel: UILabel!
+    
     @IBOutlet weak var summaryTextview: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,20 +34,8 @@ class DetailViewController: UIViewController {
         airtimeLabel.text = airtime
         seasonLabel.text = season
         episodeNumberLabel.text = episodeNumber
-        summaryTextview.text = summary
-
-        
+        guard let summaryText = summary else {return}
+        print("This is the summary of detailView variable: \(summaryText)")
+        summaryTextview.text = summaryText
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

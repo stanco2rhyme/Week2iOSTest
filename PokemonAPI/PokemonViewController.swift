@@ -12,7 +12,8 @@ class PokemonViewController: UIViewController {
     
     var pokemonBaseURLSpecific: String = "https://api.tvmaze.com/shows/82?embed=seasons&embed=episodes"
     
-    var pokemonArray: [Pokemon] = [Pokemon]()
+    var episodesArray: [episodes] = [episodes]()
+
     //    var pokemonBaseURLComplete: String?
     @IBOutlet weak var myTableview: UITableView!
     
@@ -21,13 +22,12 @@ class PokemonViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
         self.navigationItem.setHidesBackButton(true, animated:true)
         
         // set the table delegate and datasource
         myTableview.dataSource = (self as UITableViewDataSource)
         myTableview.delegate = (self as UITableViewDelegate)
-
+        
         //Set the tableview row height
         myTableview.rowHeight = 200
         
@@ -44,8 +44,16 @@ class PokemonViewController: UIViewController {
             DispatchQueue.global().sync {
                 do {
                     guard let myData = data else {return}
+//                    let pok = try JSONSerialization.jsonObject(with: data!, options: [])
+//                    print(pok)
                     let poke = try JSONDecoder().decode(Pokemon.self, from: myData)
-                    self.pokemonArray.append(poke)
+//                    print(poke)
+
+//                    self.pokemonArray = [poke]
+                    self.episodesArray = poke.embedded.episodes
+                    print(self.episodesArray)
+
+//                    self.pokemonArray.append(poke)
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -60,42 +68,34 @@ class PokemonViewController: UIViewController {
 extension PokemonViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokemonArray.count
+        return episodesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-//        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
         
         let cellIdentifier = "CustomCell"
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PokemonTableViewCell  else {
             fatalError("The dequeued cell is not an instance of PokemonTableViewCell.")
         }
-        
-        
-        cell.episodeTitle.text = pokemonArray[indexPath.row].embedded.episodes[0].episodeTitle
-        cell.episodeNumber.text = String(pokemonArray[indexPath.row].embedded.episodes[0].episodeNumber)
-        cell.season.text = String(pokemonArray[indexPath.row].embedded.episodes[0].season)
-        
+        cell.episodeTitle.text = episodesArray[indexPath.row].episodeTitle
+        cell.episodeNumber.text = String(episodesArray[indexPath.row].episodeNumber)
+        cell.season.text = String(episodesArray[indexPath.row].season)
+
         return cell
     }
 }
 
 extension PokemonViewController: UITableViewDelegate {
     
-    
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailViewController.episodeTitle = pokemonArray[indexPath.row].embedded.episodes[0].episodeTitle
-        detailViewController.premierDate = pokemonArray[indexPath.row].embedded.episodes[0].premierDate
-        detailViewController.airtime = pokemonArray[indexPath.row].embedded.episodes[0].airtime
-        detailViewController.season = String(pokemonArray[indexPath.row].embedded.episodes[0].season)
-        detailViewController.episodeNumber = String(pokemonArray[indexPath.row].embedded.episodes[0].episodeNumber)
-        detailViewController.summary = pokemonArray[indexPath.row].embedded.episodes[0].summary
+        detailViewController.episodeTitle = self.episodesArray[indexPath.row].episodeTitle
+        detailViewController.premierDate = self.episodesArray[indexPath.row].premierDate
+        detailViewController.airtime = self.episodesArray[indexPath.row].airtime
+        detailViewController.season = String(self.episodesArray[indexPath.row].season)
+        detailViewController.episodeNumber = String(self.episodesArray[indexPath.row].episodeNumber)
+        detailViewController.summary = self.episodesArray[indexPath.row].summary
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

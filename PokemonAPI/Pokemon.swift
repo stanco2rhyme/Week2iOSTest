@@ -42,4 +42,3 @@ struct episodes: Codable {
         case summary = "summary"
     }
 }
-
