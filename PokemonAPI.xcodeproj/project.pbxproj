@@ -8,32 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		EA1FE572226626D5008EFD8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE571226626D5008EFD8A /* AppDelegate.swift */; };
-		EA1FE574226626D5008EFD8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE573226626D5008EFD8A /* ViewController.swift */; };
 		EA1FE577226626D5008EFD8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1FE575226626D5008EFD8A /* Main.storyboard */; };
 		EA1FE579226626D9008EFD8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1FE578226626D9008EFD8A /* Assets.xcassets */; };
 		EA1FE57C226626D9008EFD8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1FE57A226626D9008EFD8A /* LaunchScreen.storyboard */; };
 		EA1FE58422662F82008EFD8A /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE58322662F82008EFD8A /* Pokemon.swift */; };
 		EA1FE5F32269027E008EFD8A /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE5F22269027E008EFD8A /* PokemonViewController.swift */; };
-		EA1FE5F5226902D5008EFD8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE5F4226902D5008EFD8A /* LoginViewController.swift */; };
 		EA1FE5F722690719008EFD8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE5F622690719008EFD8A /* DetailViewController.swift */; };
-		EA1FE5F922690CE7008EFD8A /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE5F822690CE6008EFD8A /* KeychainPasswordItem.swift */; };
-		EA1FE5FC22698D3D008EFD8A /* PokemonAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE5FA22698D3C008EFD8A /* PokemonAPI.xcdatamodeld */; };
+		EA1FE5FE226A1570008EFD8A /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1FE5FD226A1570008EFD8A /* PokemonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA1FE56E226626D5008EFD8A /* PokemonAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1FE571226626D5008EFD8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA1FE573226626D5008EFD8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA1FE576226626D5008EFD8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA1FE578226626D9008EFD8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA1FE57B226626D9008EFD8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA1FE57D226626D9008EFD8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA1FE58322662F82008EFD8A /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		EA1FE5F22269027E008EFD8A /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
-		EA1FE5F4226902D5008EFD8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EA1FE5F622690719008EFD8A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		EA1FE5F822690CE6008EFD8A /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
-		EA1FE5FB22698D3C008EFD8A /* PokemonAPI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PokemonAPI.xcdatamodel; sourceTree = "<group>"; };
+		EA1FE5FD226A1570008EFD8A /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,17 +60,14 @@
 		EA1FE570226626D5008EFD8A /* PokemonAPI */ = {
 			isa = PBXGroup;
 			children = (
-				EA1FE5F822690CE6008EFD8A /* KeychainPasswordItem.swift */,
 				EA1FE571226626D5008EFD8A /* AppDelegate.swift */,
-				EA1FE573226626D5008EFD8A /* ViewController.swift */,
 				EA1FE5F22269027E008EFD8A /* PokemonViewController.swift */,
-				EA1FE5F4226902D5008EFD8A /* LoginViewController.swift */,
-				EA1FE575226626D5008EFD8A /* Main.storyboard */,
 				EA1FE5F622690719008EFD8A /* DetailViewController.swift */,
+				EA1FE5FD226A1570008EFD8A /* PokemonTableViewCell.swift */,
+				EA1FE575226626D5008EFD8A /* Main.storyboard */,
 				EA1FE578226626D9008EFD8A /* Assets.xcassets */,
 				EA1FE57A226626D9008EFD8A /* LaunchScreen.storyboard */,
 				EA1FE58322662F82008EFD8A /* Pokemon.swift */,
-				EA1FE5FA22698D3C008EFD8A /* PokemonAPI.xcdatamodeld */,
 				EA1FE57D226626D9008EFD8A /* Info.plist */,
 			);
 			path = PokemonAPI;
@@ -153,13 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA1FE574226626D5008EFD8A /* ViewController.swift in Sources */,
 				EA1FE572226626D5008EFD8A /* AppDelegate.swift in Sources */,
-				EA1FE5FC22698D3D008EFD8A /* PokemonAPI.xcdatamodeld in Sources */,
 				EA1FE5F32269027E008EFD8A /* PokemonViewController.swift in Sources */,
-				EA1FE5F922690CE7008EFD8A /* KeychainPasswordItem.swift in Sources */,
 				EA1FE5F722690719008EFD8A /* DetailViewController.swift in Sources */,
-				EA1FE5F5226902D5008EFD8A /* LoginViewController.swift in Sources */,
+				EA1FE5FE226A1570008EFD8A /* PokemonTableViewCell.swift in Sources */,
 				EA1FE58422662F82008EFD8A /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,19 +348,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		EA1FE5FA22698D3C008EFD8A /* PokemonAPI.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				EA1FE5FB22698D3C008EFD8A /* PokemonAPI.xcdatamodel */,
-			);
-			currentVersion = EA1FE5FB22698D3C008EFD8A /* PokemonAPI.xcdatamodel */;
-			path = PokemonAPI.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = EA1FE566226626D5008EFD8A /* Project object */;
 }
